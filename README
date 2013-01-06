@@ -1,1 +1,48 @@
-we need to write this.
+Hello Everyone! 
+Welcome to FRC 2013 for Fairview High School!
+This will be our working repository for the season.
+
+An AWESOME (free) tutorial for git! Learn it!
+http://www.codeschool.com/courses/try-git
+
+We use this breaching model! This is your Git bible
+http://nvie.com/posts/a-successful-git-branching-model/
+
+RULES:
+1) The MASTER branch is PROTECTED! This means you can not commit to master. 
+	(See Procedure #2 on how to get your code approved into master.)
+	The reason for this is so that we can keep the master bug free and clean. 
+
+2) Work on the development branch or feature branch. Try to follow the rules outlined at:
+http://nvie.com/posts/a-successful-git-branching-model/
+(quick guide included in root of repo as Git-branching-model.pdf)
+
+
+PROCEDURE:
+0.5) Checking out the repo… well, if you're here… good job :P
+
+1) Starting a new feature branch
+	1.A) run the command "git checkout -b myfeature develop"
+
+	See ( http://nvie.com/posts/a-successful-git-branching-model/ ) for info
+	This makes you a new branch off of the develop branch,
+	here you can feel free to work on your new feature without fear of merge Errors! (ewww)
+	
+2) Finishing a feature branch (merging it into develop)
+	2.A) git checkout develop
+	2.B) git merge --no-ff myfeature
+	2.C) OPTIONAL  git branch -d myfeature 
+	2.D) git push origin develop
+
+3) Getting Code Approved To Master Branch
+	3.A) In the top bar of the repo, select "Merge Requests"
+	3.B) Select "New Merge Request" button
+	3.C) In "From" section select the branch you wish to get approved.
+	3.D) In "To" section select "Master"
+	3.E) Under "Title" type an short description of what your code changes
+	3.F) Under "Assign to" Select "Alex Mault" (or other mentor)
+	3.G) Select "Save"
+
+	What NOT to do… DO NOT merge your branch into master on your computer.
+	The server WILL reject any attempt to push to master.
+
