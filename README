@@ -46,3 +46,4 @@ PROCEDURE:
 	What NOT to do… DO NOT merge your branch into master on your computer.
 	The server WILL reject any attempt to push to master.
 
+(change example)
