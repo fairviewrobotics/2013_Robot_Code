@@ -1,4 +1,4 @@
-#include "Drive.h"
+#include "SingleStickDrive.h"
 
 #include <cassert>
 #include <cmath>
@@ -18,18 +18,18 @@ float AbsMin(float a, float b) {
 	return abs(a) < abs(b) ? a : b;
 }
 
-void Drive::Move(float speed) {
+void SingleStickDrive::Move(float speed) {
 	assert(speed >= -1.0f && speed <= 1.0f);
 	goalSpeed = speed;
 }
 
-void Drive::Rotate(float speed, Rotation dir) {
+void SingleStickDrive::Rotate(float speed, Rotation dir) {
 	assert(speed >= 0.0f && speed <= 1.0f);
 	goalRotationSpeed = speed;
 	direction = dir;
 }
 
-void Drive::Update() {
+void SingleStickDrive::Update() {
 	// Forwards
 	if(goalSpeed > 0.0f) {
 		if(direction == CW) {

@@ -18,6 +18,6 @@ void TankDrive::Move(float leftSpeed, float rightSpeed) {
 }
 
 void TankDrive::Update() {
-	leftJaguar->SetSpeed(leftGoalSpeed);
-	rightJaguar->SetSpeed(rightGoalSpeed);
+	leftJaguar->SetSpeed(goalLeftSpeed);
+	rightJaguar->SetSpeed(goalRightSpeed);
 }

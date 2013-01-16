@@ -25,7 +25,7 @@ public:
 };
 
 RobotBase *FRC_userClassFactory(void) {
-	return new RobotDemo();
+	return new Robot();
 }
 extern "C" {
 	int FRC_UserProgram_StartupLibraryInit(void) {
