@@ -1,10 +1,18 @@
 #include "WPILib.h"
 
+#include "Control.h"
+
 class Robot : public SimpleRobot {
+	Control control;
 
 public:
 	Robot(void) {
 		puts("I'm a robot");
+		while(true) {
+			printf("%f\n", control.GetX(RIGHT));
+			printf("%f\n\n", control.GetY(RIGHT));
+			Wait(0.5);
+		}
 	}
 
 	void Autonomous(void) {
