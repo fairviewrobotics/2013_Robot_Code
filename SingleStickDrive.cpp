@@ -10,11 +10,11 @@ SingleStickDrive::SingleStickDrive()
 	rightJaguar = new Jaguar(RIGHT_PORT);
 }
 
-float AbsMax(float a, float b) {
+static float AbsMax(float a, float b) {
 	return abs(a) > abs(b) ? a : b;
 }
 
-float AbsMin(float a, float b) {
+static float AbsMin(float a, float b) {
 	return abs(a) < abs(b) ? a : b;
 }
 

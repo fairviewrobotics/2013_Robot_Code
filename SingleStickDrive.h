@@ -17,9 +17,6 @@ class SingleStickDrive {
 	const int LEFT_PORT;
 	const int RIGHT_PORT;
 	
-	float AbsMin(float a, float b);
-	float AbsMax(float a, float b);
-	
 public:
 	SingleStickDrive();
 	
