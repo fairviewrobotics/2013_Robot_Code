@@ -46,15 +46,15 @@ void TransRotDrive::Update() {
 	// Backwards or pure rotation.
 	else {
 		if(direction == CW) {
-			leftFrontJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
-			leftBackJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
-			rightFrontJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
-			rightBackJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
+			leftFrontJaguar->SetSpeed(goalSpeed + goalRotationSpeed);
+			leftBackJaguar->SetSpeed(goalSpeed + goalRotationSpeed);
+			rightFrontJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
+			rightBackJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
 		} else {
-			leftFrontJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
-			leftBackJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
-			rightFrontJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
-			rightBackJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
+			leftFrontJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
+			leftBackJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
+			rightFrontJaguar->SetSpeed(goalSpeed + goalRotationSpeed);
+			rightBackJaguar->SetSpeed(goalSpeed + goalRotationSpeed);
 		}
 	}
 }
