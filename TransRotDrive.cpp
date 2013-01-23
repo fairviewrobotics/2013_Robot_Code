@@ -10,11 +10,11 @@ TransRotDrive::TransRotDrive(int leftFront, int rightFront, int leftBack, int ri
 	rightBackJaguar = new Jaguar(rightBack);
 }
 
-static float AbsMax(float a, float b) {
+static float absMax(float a, float b) {
 	return abs(a) > abs(b) ? a : b;
 }
 
-static float AbsMin(float a, float b) {
+static float absMin(float a, float b) {
 	return abs(a) < abs(b) ? a : b;
 }
 
@@ -32,15 +32,15 @@ void TransRotDrive::Update() {
 	// Forwards
 	if(goalSpeed > 0.0f) {
 		if(direction == CW) {
-			leftFrontJaguar->SetSpeed(AbsMax(goalSpeed, goalRotationSpeed));
-			leftBackJaguar->SetSpeed(AbsMax(goalSpeed, goalRotationSpeed));
+			leftFrontJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
+			leftBackJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
 			rightFrontJaguar->SetSpeed(goalSpeed - goalRotationSpeed);
 			rightBackJaguar->SetSpeed(goalSpeed - goalRotationSpeed);
 		} else {
 			leftFrontJaguar->SetSpeed(goalSpeed - goalRotationSpeed);
 			leftBackJaguar->SetSpeed(goalSpeed - goalRotationSpeed);
-			rightBackJaguar->SetSpeed(AbsMax(goalSpeed, goalRotationSpeed));
-			rightBackJaguar->SetSpeed(AbsMax(goalSpeed, goalRotationSpeed));
+			rightBackJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
+			rightBackJaguar->SetSpeed(absMax(goalSpeed, goalRotationSpeed));
 		}
 	}
 	// Backwards or pure rotation.
@@ -48,11 +48,11 @@ void TransRotDrive::Update() {
 		if(direction == CW) {
 			leftFrontJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
 			leftBackJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
-			rightFrontJaguar->SetSpeed(AbsMax(-goalSpeed, goalRotationSpeed));
-			rightBackJaguar->SetSpeed(AbsMax(-goalSpeed, goalRotationSpeed));
+			rightFrontJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
+			rightBackJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
 		} else {
-			leftFrontJaguar->SetSpeed(AbsMax(-goalSpeed, goalRotationSpeed));
-			leftBackJaguar->SetSpeed(AbsMax(-goalSpeed, goalRotationSpeed));
+			leftFrontJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
+			leftBackJaguar->SetSpeed(absMax(-goalSpeed, goalRotationSpeed));
 			rightFrontJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
 			rightBackJaguar->SetSpeed(-goalSpeed + goalRotationSpeed);
 		}
