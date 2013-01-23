@@ -5,20 +5,19 @@ enum Rotation {
 	CCW
 };
 
-class SingleStickDrive {
-	Jaguar *leftJaguar;
-	Jaguar *rightJaguar;
+class TransRotDrive {
+	Jaguar *leftFrontJaguar;
+	Jaguar *leftBackJaguar;
+	Jaguar *rightFrontJaguar;
+	Jaguar *rightBackJaguar;
 	
 	float goalSpeed;
 	float goalRotationSpeed;
 	
 	Rotation direction;
 	
-	const int LEFT_PORT;
-	const int RIGHT_PORT;
-	
 public:
-	SingleStickDrive();
+	TransRotDrive(int leftFront, int rightFront, int leftBack, int rightBack);
 	
 	void Move(float speed);
 	
