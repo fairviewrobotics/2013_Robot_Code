@@ -6,17 +6,16 @@ enum Rotation {
 };
 
 class TankDrive {
-	Jaguar *leftJaguar;
-	Jaguar *rightJaguar;
+	Jaguar *leftFrontJaguar;
+	Jaguar *leftBackJaguar;
+	Jaguar *rightFrontJaguar;
+	Jaguar *rightBackJaguar;
 	
 	float goalLeftSpeed;
 	float goalRightSpeed;
 	
-	const int LEFT_PORT;
-	const int RIGHT_PORT;
-	
 public:
-	TankDrive();
+	TankDrive(int leftFront, int rightFront, int leftBack, int rightBack);
 	
 	void Move(float leftSpeed, float rightSpeed);
 	

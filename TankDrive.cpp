@@ -3,21 +3,21 @@
 #include <cassert>
 #include <cmath>
 
-TankDrive::TankDrive()
-	: LEFT_PORT(1)
-	, RIGHT_PORT(2) {
-	leftJaguar = new Jaguar(LEFT_PORT);
-	rightJaguar = new Jaguar(RIGHT_PORT);
+TankDrive::TankDrive(int leftFront, int rightFront, int leftBack, int rightBack) {
+	leftFrontJaguar = new Jaguar(leftFront);
+	leftBackJaguar = new Jaguar(leftBack);
+	rightFrontJaguar = new Jaguar(rightFront);
+	rightBackJaguar = new Jaguar(rightBack);
 }
 
 void TankDrive::Move(float leftSpeed, float rightSpeed) {
-	assert(leftSpeed >= -1.0f && leftSpeed <= 1.0f);
-	assert(rightSpeed >= -1.0f && rightSpeed <= 1.0f);
 	goalLeftSpeed = leftSpeed;
 	goalRightSpeed = rightSpeed;
 }
 
 void TankDrive::Update() {
-	leftJaguar->SetSpeed(goalLeftSpeed);
-	rightJaguar->SetSpeed(goalRightSpeed);
+	leftFrontJaguar->SetSpeed(goalLeftSpeed);
+	leftBackJaguar->SetSpeed(goalLeftSpeed);
+	rightFrontJaguar->SetSpeed(goalRightSpeed);
+	rightBackJaguar->SetSpeed(goalRightSpeed);
 }
