@@ -1,9 +1,5 @@
 #include "WPILib.h"
 
-enum Rotation {
-	CW,
-	CCW
-};
 
 class TankDrive {
 	Jaguar *leftFrontJaguar;
