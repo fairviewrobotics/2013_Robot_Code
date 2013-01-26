@@ -3,17 +3,14 @@
 
 #include "WPILib.h"
 
+#include "Drive.h"
+
 enum Rotation {
 	CW,
 	CCW
 };
 
-class TransRotDrive {
-	Jaguar *leftFrontJaguar;
-	Jaguar *leftBackJaguar;
-	Jaguar *rightFrontJaguar;
-	Jaguar *rightBackJaguar;
-	
+class TransRotDrive : public Drive {
 	float goalSpeed;
 	float goalRotationSpeed;
 	
