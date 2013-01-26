@@ -3,12 +3,9 @@
 
 #include "WPILib.h"
 
-class TankDrive {
-	Jaguar *leftFrontJaguar;
-	Jaguar *leftBackJaguar;
-	Jaguar *rightFrontJaguar;
-	Jaguar *rightBackJaguar;
-	
+#include "Drive.h"
+
+class TankDrive : public Drive {
 	float goalLeftSpeed;
 	float goalRightSpeed;
 	
