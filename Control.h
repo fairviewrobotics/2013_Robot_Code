@@ -1,3 +1,6 @@
+#ifndef CONTROL_H
+#define CONTROL_H
+
 #include "WPILib.h"
 
 enum Stick {
@@ -14,3 +17,5 @@ public:
 	float GetX(Stick stick);
 	float GetY(Stick stick);
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef TRANSROTDRIVE_H
+#define TRANSROTDRIVE_H
+
 #include "WPILib.h"
 
 enum Rotation {
@@ -25,3 +28,5 @@ public:
 	
 	void Update();
 };
+
+#endif

@@ -1,5 +1,7 @@
-#include "WPILib.h"
+#ifndef TANKDRIVE_H
+#define TANKDRIVE_H
 
+#include "WPILib.h"
 
 class TankDrive {
 	Jaguar *leftFrontJaguar;
@@ -17,3 +19,5 @@ public:
 	
 	void Update();
 };
+
+#endif
