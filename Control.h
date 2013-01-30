@@ -16,6 +16,8 @@ public:
 	
 	float GetX(Stick stick);
 	float GetY(Stick stick);
+	
+	bool GetButton(int i);
 };
 
 #endif

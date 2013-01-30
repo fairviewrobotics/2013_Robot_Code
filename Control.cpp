@@ -19,3 +19,7 @@ float Control::GetY(Stick stick) {
 		return -joystick->GetRawAxis(3)/0.65f;
 	}
 }
+
+bool Control::GetButton(int i) {
+	return joystick->GetRawButton(i);
+}
