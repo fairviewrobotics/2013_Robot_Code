@@ -10,11 +10,11 @@ TransRotDrive::TransRotDrive(int leftFront, int rightFront, int leftBack, int ri
 static float absMax(float a, float b) {
 	return abs(a) > abs(b) ? a : b;
 }
-
+/*
 static float absMin(float a, float b) {
 	return abs(a) < abs(b) ? a : b;
 }
-
+*/
 static float sign(float n) {
 	return n < 0 ? -1 : 1;
 }
@@ -32,6 +32,7 @@ void TransRotDrive::Update() {
 	// Adding a deadzone
 	const float deadzone = 0.1f;
 	
+	
 	if(goalSpeed < deadzone && goalSpeed > -deadzone) {
 		goalSpeed = 0.0f;
 	} else {
@@ -42,7 +43,7 @@ void TransRotDrive::Update() {
 	if(goalRotationSpeed < deadzone && goalRotationSpeed > -deadzone) {
 		goalRotationSpeed = 0.0f;
 	} else {
-		goalRotationSpeed += sign(goalSpeed)*0.1f;
+		goalRotationSpeed += sign(goalRotationSpeed)*0.1f;
 		goalRotationSpeed /= 1.1f;
 	}
 	

@@ -16,6 +16,7 @@ public:
 	
 	float GetX(Stick stick);
 	float GetY(Stick stick);
+	float Deadzone(float input, float threshold);
 	
 	bool GetButton(int i);
 };
